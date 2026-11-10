@@ -10,13 +10,13 @@
      ██║ ╚═╝ ██║██║  ██║██║        ██║   ╚██████╔╝██████╔╝███████╗██║  ██║
      ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝        ╚═╝    ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
     
-    Maptober 2026 • Official Public Gallery & Results
+    Maptober 2026 • Official Public Gallery & Final Results
     Organized by Kleingebaeck • Built for the 0b0t Mapart Community
     ===================================================================
   -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maptober 2026 • 0b0t – Official Gallery & Results</title>
+  <title>Maptober 2026 • 0b0t – Official Gallery & Final Results</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -28,7 +28,7 @@
               obsidian: '#0b0604',
               dark: '#140b07',
               card: '#1f120b',
-              cardHover: '#2c1a10',
+              cardHover: '#2a180e',
               border: '#492b19',
               borderGlow: '#7c431e',
               amber: '#ff9d2e',
@@ -46,10 +46,10 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #0b0604;
       background-image: 
         radial-gradient(circle at 15% 10%, rgba(234, 88, 12, 0.14) 0%, transparent 40%),
@@ -70,11 +70,6 @@
       filter: drop-shadow(0px 3px 0px #3b1706) drop-shadow(0px 5px 10px rgba(0,0,0,0.8));
       letter-spacing: -0.03em;
     }
-    .mc-map-frame {
-      background: #120905;
-      border: 2px solid #59331d;
-      box-shadow: inset 0 0 0 2px #26140b, 0 8px 20px -4px rgba(0, 0, 0, 0.75);
-    }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #140b07; }
     ::-webkit-scrollbar-thumb { background: #492b19; border-radius: 3px; }
@@ -84,11 +79,11 @@
 <body class="text-maptober-textMain min-h-screen flex flex-col justify-between selection:bg-maptober-pumpkin selection:text-white">
 
   <!-- TOP NAVIGATION HEADER -->
-  <header class="bg-maptober-dark/95 backdrop-blur-md border-b-2 border-maptober-border sticky top-0 z-40 px-4 py-3 sm:px-6 shadow-xl">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+  <header class="bg-maptober-dark/95 backdrop-blur-md border-b-2 border-maptober-border sticky top-0 z-40 px-3 py-2.5 sm:px-6 shadow-xl">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
       
       <!-- Brand / Logo -->
-      <div class="flex items-center space-x-3.5 cursor-pointer" onclick="switchTab('gallery')">
+      <div class="flex items-center space-x-3 cursor-pointer self-start sm:self-auto" onclick="switchTab('results')">
         <div class="w-11 h-11 rounded bg-[#2b1408] p-0.5 border-2 border-[#3b1909] shadow-lg flex-shrink-0 flex items-center justify-center">
           <svg viewBox="0 0 16 16" class="w-full h-full pixelated">
             <rect x="0" y="0" width="16" height="16" fill="#2d1206"/>
@@ -116,29 +111,30 @@
           
           <div id="fallback-logo-text">
             <div class="flex items-center gap-2">
-              <span class="font-pixel text-base sm:text-xl font-bold maptober-title-3d tracking-wider">MAPTOBER</span>
+              <span class="font-pixel text-lg sm:text-xl font-bold maptober-title-3d tracking-wider">MAPTOBER</span>
               <span class="font-pixel text-[10px] sm:text-xs px-1.5 py-0.5 rounded bg-maptober-pumpkin/30 text-maptober-gold border border-maptober-amber/40">2026</span>
             </div>
-            <p class="font-pixel text-[10px] text-maptober-amber tracking-widest uppercase">0B0T • OFFICIAL EXHIBITION</p>
+            <p class="font-pixel text-[10px] text-maptober-amber tracking-widest uppercase">0B0T • OFFICIAL SHOWCASE</p>
           </div>
         </div>
       </div>
 
-      <!-- Main Navigation Tabs -->
-      <div class="flex items-center space-x-2">
-        <button id="tab-btn-gallery" onclick="switchTab('gallery')" class="px-3.5 py-2 rounded-lg font-pixel text-xs transition flex items-center gap-1.5 bg-gradient-to-r from-maptober-pumpkin to-maptober-amber text-black font-bold shadow">
+      <!-- Main Navigation Tabs (Pixel Font restored!) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 w-full sm:w-auto justify-end">
+        <button id="tab-btn-results" onclick="switchTab('results')" class="flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg font-pixel text-[11px] sm:text-xs transition flex items-center justify-center gap-1.5 bg-gradient-to-r from-maptober-pumpkin to-maptober-amber text-black font-bold shadow-lg">
+          <span>🏆</span>
+          <span>Results</span>
+        </button>
+
+        <button id="tab-btn-gallery" onclick="switchTab('gallery')" class="flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg font-pixel text-[11px] sm:text-xs transition flex items-center justify-center gap-1.5 bg-maptober-card hover:bg-maptober-cardHover text-maptober-textMain border border-maptober-border">
           <span>🖼️</span>
           <span>Gallery (125)</span>
         </button>
 
-        <button id="tab-btn-results" onclick="switchTab('results')" class="px-3.5 py-2 rounded-lg font-pixel text-xs transition flex items-center gap-1.5 bg-maptober-card hover:bg-maptober-cardHover text-maptober-textMain border border-maptober-border">
-          <span>🏆</span>
-          <span>Leaderboard & Results</span>
-        </button>
-
-        <button onclick="toggleRulesModal()" class="px-3 py-2 rounded-lg bg-maptober-card hover:bg-maptober-cardHover text-xs font-semibold text-maptober-gold border border-maptober-amber/40 hover:border-maptober-gold flex items-center gap-1.5 transition">
+        <button onclick="toggleRulesModal()" class="px-3 sm:px-3.5 py-2 rounded-lg bg-maptober-card hover:bg-maptober-cardHover font-pixel text-[11px] sm:text-xs text-maptober-gold border border-maptober-amber/50 hover:border-maptober-gold flex items-center justify-center gap-1.5 transition shadow">
           <span>📜</span>
           <span class="hidden md:inline">Scoring Rules</span>
+          <span class="md:hidden">Rules</span>
         </button>
       </div>
     </div>
@@ -146,182 +142,161 @@
 
   <!-- HERO STATS BAR -->
   <section class="border-b border-maptober-border bg-gradient-to-b from-maptober-card/70 to-transparent py-5 px-4 sm:px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
       <div>
-        <h1 class="font-pixel text-lg sm:text-2xl text-white tracking-tight">
-          0B0T MAPTOBER 2026 SHOWCASE
-        </h1>
-        <p class="text-xs sm:text-sm text-maptober-textMuted mt-0.5">
-          31 days of block-by-block creativity on 0b0t. Browse all 125 valid maparts submitted by the community.
+        <div class="flex flex-wrap items-center gap-2.5">
+          <span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/50 text-emerald-300 font-pixel text-[10px]">FINAL STANDINGS</span>
+          <h1 class="font-pixel text-lg sm:text-2xl text-white tracking-wide">
+            MAPTOBER 2026 • <span class="text-maptober-gold">OFFICIAL RESULTS</span>
+          </h1>
+        </div>
+        <p class="text-xs sm:text-sm text-maptober-textMuted mt-1">
+          All 125 maparts from 31 days on 0b0t.
         </p>
       </div>
 
-      <div class="grid grid-cols-3 sm:grid-cols-4 gap-2.5 w-full md:w-auto">
-        <div class="bg-maptober-dark/90 border border-maptober-border rounded-lg px-3.5 py-2 text-center">
-          <div class="font-pixel text-sm sm:text-base text-maptober-gold font-bold">125</div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full lg:w-auto flex-shrink-0">
+        <div class="bg-maptober-dark/90 border border-maptober-border rounded-lg px-3 py-2 text-center min-w-[110px]">
+          <div class="font-pixel text-base sm:text-lg text-maptober-gold font-bold">125</div>
           <div class="text-[10px] font-mono text-maptober-textMuted uppercase">Submissions</div>
         </div>
-        <div class="bg-maptober-dark/90 border border-maptober-border rounded-lg px-3.5 py-2 text-center">
-          <div class="font-pixel text-sm sm:text-base text-maptober-amber font-bold" id="stat-total-blocks">1,123</div>
+        <div class="bg-maptober-dark/90 border border-maptober-border rounded-lg px-3 py-2 text-center min-w-[110px]">
+          <div class="font-pixel text-base sm:text-lg text-maptober-amber font-bold" id="stat-total-blocks">1,123</div>
           <div class="text-[10px] font-mono text-maptober-textMuted uppercase">Total Maps</div>
         </div>
-        <div class="bg-maptober-dark/90 border border-maptober-border rounded-lg px-3.5 py-2 text-center">
-          <div class="font-pixel text-sm sm:text-base text-emerald-400 font-bold">4</div>
-          <div class="text-[10px] font-mono text-maptober-textMuted uppercase">31/31 Homeruns</div>
+        <div class="bg-maptober-dark/90 border border-maptober-border rounded-lg px-3 py-2 text-center min-w-[110px]">
+          <div class="font-pixel text-base sm:text-lg text-emerald-400 font-bold">31/31</div>
+          <div class="text-[10px] font-mono text-maptober-textMuted uppercase">4 Homeruns</div>
         </div>
-        <div class="hidden sm:block bg-maptober-dark/90 border border-maptober-border rounded-lg px-3.5 py-2 text-center">
-          <div class="font-pixel text-sm sm:text-base text-maptober-parchment font-bold" id="stat-voting-status">IN PROGRESS</div>
-          <div class="text-[10px] font-mono text-maptober-textMuted uppercase">Jury Status</div>
+        <div class="bg-maptober-dark/90 border border-maptober-border rounded-lg px-3 py-2 text-center min-w-[110px]">
+          <div class="font-pixel text-base sm:text-lg text-maptober-parchment font-bold">OCT 26</div>
+          <div class="text-[10px] font-mono text-maptober-textMuted uppercase">31 Days</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- MAIN CONTENT AREA -->
-  <main class="max-w-7xl w-full mx-auto p-4 sm:p-6 flex-grow">
+  <main class="max-w-7xl w-full mx-auto p-3.5 sm:p-6 flex-grow">
 
     <!-- ==================== TAB 1: GALLERY VIEW ==================== -->
-    <div id="view-gallery">
+    <div id="view-gallery" class="hidden">
       
       <!-- FILTER & SEARCH CONTROLS -->
-      <div class="bg-maptober-card/90 border border-maptober-border rounded-xl p-4 mb-6 shadow-lg">
+      <div class="bg-maptober-card/90 border-2 border-maptober-border rounded-xl p-3.5 sm:p-4 mb-6 shadow-lg">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           
-          <!-- Search Input -->
           <div>
-            <label class="block text-[10px] font-pixel text-maptober-amber uppercase mb-1">Search Title or Artist</label>
-            <div class="relative">
-              <input type="text" id="filter-search" oninput="applyFilters()" placeholder="e.g. Succubus, Nebula, Duck..." 
-                     class="w-full bg-maptober-obsidian border border-maptober-border focus:border-maptober-amber rounded-lg px-3 py-2 text-xs text-white placeholder-maptober-textMuted/50 focus:outline-none">
-            </div>
+            <label class="block text-[10px] font-pixel text-maptober-amber uppercase mb-1">Search Map or Artist</label>
+            <input type="text" id="filter-search" oninput="applyFilters()" placeholder="e.g. Succubus, SPB, Mountain..." 
+                   class="w-full bg-maptober-obsidian border border-maptober-border focus:border-maptober-amber rounded-lg px-3 py-2 text-xs text-white placeholder-maptober-textMuted/50 focus:outline-none">
           </div>
 
-          <!-- Team / Artist Filter -->
           <div>
             <label class="block text-[10px] font-pixel text-maptober-amber uppercase mb-1">Artist / Team</label>
             <select id="filter-artist" onchange="applyFilters()" class="w-full bg-maptober-obsidian border border-maptober-border focus:border-maptober-amber rounded-lg px-3 py-2 text-xs text-white focus:outline-none">
               <option value="ALL">All Artists & Teams (125)</option>
-              <option value="CherryTeam">CherryTeam (incl. Collabs)</option>
-              <option value="SteinerndeMedusa">SteinerndeMedusa (incl. Collabs)</option>
-              <option value="Endenjoyers">Endenjoyers (incl. Collabs)</option>
-              <option value="KINGS OF CLOUD">KINGS OF CLOUD (incl. Collabs)</option>
+              <option value="CherryTeam">CherryTeam</option>
+              <option value="SteinerndeMedusa">SteinerndeMedusa</option>
+              <option value="KINGS OF CLOUD">KINGS OF CLOUD</option>
+              <option value="Endenjoyers">Endenjoyers</option>
               <option value="BrilleMC">BrilleMC</option>
-              <option value="diskutabel">diskutabel</option>
               <option value="aphied">aphied</option>
+              <option value="diskutabel">diskutabel</option>
               <option value="COLLAB">Collabs Only</option>
             </select>
           </div>
 
-          <!-- Day Filter -->
           <div>
             <label class="block text-[10px] font-pixel text-maptober-amber uppercase mb-1">Maptober Day</label>
             <select id="filter-day" onchange="applyFilters()" class="w-full bg-maptober-obsidian border border-maptober-border focus:border-maptober-amber rounded-lg px-3 py-2 text-xs text-white focus:outline-none">
               <option value="ALL">All 31 Days</option>
-              <!-- Populated via JS -->
             </select>
           </div>
 
-          <!-- Sort Order -->
           <div>
-            <label class="block text-[10px] font-pixel text-maptober-amber uppercase mb-1">Sort By</label>
+            <label class="block text-[10px] font-pixel text-maptober-amber uppercase mb-1">Sort Order</label>
             <select id="filter-sort" onchange="applyFilters()" class="w-full bg-maptober-obsidian border border-maptober-border focus:border-maptober-amber rounded-lg px-3 py-2 text-xs text-white focus:outline-none">
+              <option value="score_desc">Highest Total Score</option>
+              <option value="rating_desc">Highest Rating (Ø)</option>
               <option value="day_asc">Chronological (Day 1 → 31)</option>
               <option value="day_desc">Newest First (Day 31 → 1)</option>
-              <option value="size_desc">Largest Maparts First</option>
-              <option value="score_desc" id="sort-option-score">Highest Score First</option>
+              <option value="size_desc">Largest Map Area</option>
               <option value="name_asc">Title (A → Z)</option>
             </select>
           </div>
 
         </div>
 
-        <!-- Active Filter Info Bar -->
-        <div class="mt-3 pt-3 border-t border-maptober-border/60 flex flex-wrap items-center justify-between gap-2 text-xs text-maptober-textMuted">
-          <div>
-            Showing <span id="filtered-count" class="font-bold text-maptober-gold font-mono">125</span> of 125 maparts
-          </div>
-          <button onclick="resetFilters()" class="text-maptober-amber hover:text-maptober-gold underline text-xs font-mono">
-            Reset Filters
-          </button>
+        <div class="mt-3 pt-3 border-t border-maptober-border/60 flex items-center justify-between gap-2 text-xs text-maptober-textMuted">
+          <div class="font-pixel text-[10px]">SHOWING <span id="filtered-count" class="text-maptober-gold">125</span> OF 125 MAPARTS</div>
+          <button onclick="resetFilters()" class="font-pixel text-[10px] text-maptober-amber hover:text-maptober-gold underline">RESET FILTERS</button>
         </div>
       </div>
 
-      <!-- GALLERY GRID -->
-      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <!-- Populated dynamically via JS -->
-      </div>
+      <!-- GALLERY GRID (2 cols on mobile, 3 on md, 4 on lg) -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5"></div>
 
       <!-- Empty State -->
       <div id="gallery-empty" class="hidden text-center py-16 bg-maptober-card/50 border border-maptober-border rounded-xl my-4">
-        <div class="text-4xl mb-2">🎃</div>
-        <h3 class="font-pixel text-base text-maptober-gold">No matching maparts found</h3>
-        <p class="text-xs text-maptober-textMuted mt-1">Try adjusting your search or filter settings.</p>
-        <button onclick="resetFilters()" class="mt-4 px-4 py-2 rounded-lg bg-maptober-pumpkin text-white font-pixel text-xs">
-          Show All 125 Maps
-        </button>
+        <div class="text-3xl mb-2">🎃</div>
+        <h3 class="font-pixel text-base text-maptober-gold">NO MATCHING MAPARTS FOUND</h3>
+        <p class="text-xs text-maptober-textMuted mt-1">Try resetting your search or filter settings.</p>
+        <button onclick="resetFilters()" class="mt-3 px-4 py-2 rounded-lg bg-maptober-pumpkin text-black font-pixel text-xs font-bold">SHOW ALL 125 MAPS</button>
       </div>
 
     </div>
 
     <!-- ==================== TAB 2: LEADERBOARD & RESULTS VIEW ==================== -->
-    <div id="view-results" class="hidden space-y-8">
+    <div id="view-results" class="space-y-6 sm:space-y-8">
 
-      <!-- STATUS BANNER WHEN VOTING IS STILL IN PROGRESS -->
-      <div id="results-pending-banner" class="bg-gradient-to-br from-[#2c1508] via-maptober-card to-maptober-dark border-2 border-maptober-amber/70 rounded-xl p-6 sm:p-8 text-center shadow-2xl">
-        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-maptober-pumpkin/20 border border-maptober-amber/50 text-3xl mb-3">
-          🗳️
-        </div>
-        <h2 class="font-pixel text-lg sm:text-2xl text-maptober-gold">JURY VOTING IN PROGRESS</h2>
-        <p class="text-xs sm:text-sm text-maptober-textMuted max-w-2xl mx-auto mt-2 leading-relaxed">
-          All 125 submissions are currently being evaluated by the official Maptober 2026 Jury. 
-          While the jury is rating each artwork from 1 to 10, you can already inspect the guaranteed <strong>Size Bonuses</strong> and <strong>31/31 Homerun Bonuses (+35 pts)</strong> below!
-        </p>
-      </div>
+      <!-- PODIUM SHOWCASE CARDS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4" id="podium-cards"></div>
 
-      <!-- TEAM STANDINGS & HOMERUN TABLE -->
+      <!-- TEAM STANDINGS TABLE -->
       <div class="bg-maptober-card/95 border-2 border-maptober-border rounded-xl overflow-hidden shadow-2xl">
-        <div class="px-5 py-4 bg-maptober-dark border-b border-maptober-border flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div class="px-4 py-3.5 sm:px-5 sm:py-4 bg-maptober-dark border-b border-maptober-border flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h3 class="font-pixel text-sm sm:text-base text-maptober-gold">🏆 TEAM & ARTIST STANDINGS</h3>
-            <p class="text-xs text-maptober-textMuted">Total submissions, total map blocks built, Size Bonus, Homerun Bonus, and Jury Score</p>
+            <h2 class="font-pixel text-sm sm:text-base text-maptober-gold">TEAM & ARTIST LEADERBOARD</h2>
+            <p class="text-xs text-maptober-textMuted">Combined total of Art Ratings, Size Bonuses, and 31/31 Homerun Bonuses</p>
           </div>
-          <span id="standings-mode-badge" class="px-3 py-1 rounded bg-amber-500/20 border border-amber-400/40 font-pixel text-[10px] text-maptober-gold self-start sm:self-auto">
-            PRE-JURY BASE POINTS
+          <span class="px-2.5 py-1 rounded bg-emerald-500/20 border border-emerald-400/50 font-pixel text-[10px] text-emerald-300 self-start sm:self-auto">
+            OFFICIAL FINAL STANDINGS
           </span>
         </div>
 
         <div class="overflow-x-auto">
-          <table class="w-full text-left border-collapse font-mono text-xs">
+          <table class="w-full text-left border-collapse font-mono text-xs min-w-[680px]">
             <thead>
               <tr class="bg-maptober-obsidian text-maptober-amber border-b border-maptober-border font-pixel text-[10px]">
-                <th class="py-3.5 px-4">#</th>
-                <th class="py-3.5 px-4">Artist / Team</th>
-                <th class="py-3.5 px-4 text-center">Maps Submitted</th>
-                <th class="py-3.5 px-4 text-center">Total Area</th>
-                <th class="py-3.5 px-4 text-center">Homerun (31/31)</th>
-                <th class="py-3.5 px-4 text-right">Size Bonus</th>
-                <th class="py-3.5 px-4 text-right">Jury Points</th>
-                <th class="py-3.5 px-4 text-right text-maptober-gold">Total Score</th>
+                <th class="py-3.5 px-3.5">Rank</th>
+                <th class="py-3.5 px-3.5">Artist / Team</th>
+                <th class="py-3.5 px-3.5 text-center">Maps</th>
+                <th class="py-3.5 px-3.5 text-center">Total Area</th>
+                <th class="py-3.5 px-3.5 text-center">Ø Rating</th>
+                <th class="py-3.5 px-3.5 text-center">Homerun</th>
+                <th class="py-3.5 px-3.5 text-right">Size Bonus</th>
+                <th class="py-3.5 px-3.5 text-right">Art Score</th>
+                <th class="py-3.5 px-3.5 text-right text-maptober-gold">Total Score</th>
               </tr>
             </thead>
-            <tbody id="leaderboard-table-body" class="divide-y divide-maptober-border/60">
-              <!-- Populated dynamically via JS -->
-            </tbody>
+            <tbody id="leaderboard-table-body" class="divide-y divide-maptober-border/60"></tbody>
           </table>
         </div>
       </div>
 
-      <!-- TOP INDIVIDUAL MAPARTS SECTION (Shown when results published, or sorted by Size Bonus before) -->
+      <!-- TOP INDIVIDUAL MAPARTS -->
       <div class="bg-maptober-card/95 border-2 border-maptober-border rounded-xl overflow-hidden shadow-2xl">
-        <div class="px-5 py-4 bg-maptober-dark border-b border-maptober-border flex justify-between items-center">
+        <div class="px-4 py-3.5 sm:px-5 sm:py-4 bg-maptober-dark border-b border-maptober-border flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h3 class="font-pixel text-sm sm:text-base text-maptober-gold" id="top-maps-heading">🔥 LARGEST & FEATURED MAPARTS</h3>
-            <p class="text-xs text-maptober-textMuted" id="top-maps-subheading">Ranked by total map area (1x1 up to 16x10) until jury scores are released</p>
+            <h2 class="font-pixel text-sm sm:text-base text-maptober-gold">TOP 12 HIGHEST-SCORING MAPARTS</h2>
+            <p class="text-xs text-maptober-textMuted">Ranked by Total Map Score (Ø Rating + Size Bonus)</p>
           </div>
+          <button onclick="switchTab('gallery')" class="font-pixel text-[10px] text-maptober-amber hover:text-maptober-gold underline self-start sm:self-auto">
+            VIEW ALL 125 MAPS →
+          </button>
         </div>
-        <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="top-maps-showcase">
-          <!-- Populated via JS -->
-        </div>
+        <div class="p-3.5 sm:p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="top-maps-showcase"></div>
       </div>
 
     </div>
@@ -329,59 +304,59 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="py-5 text-center text-xs text-maptober-textMuted border-t border-maptober-border bg-maptober-dark/90 mt-10">
+  <footer class="py-5 text-center text-xs text-maptober-textMuted border-t border-maptober-border bg-maptober-dark/90 mt-8">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
       <span class="font-pixel text-[10px] tracking-wider text-maptober-parchment">0B0T MAPTOBER 2026 • ORGANIZED BY KLEINGEBAECK</span>
-      <span class="font-mono text-[11px]">All 125 Maparts verified on 0b0t</span>
+      <span class="font-mono text-[11px]">125 Verified Maparts • 1,123 Total Maps Built</span>
     </div>
   </footer>
 
-  <!-- LIGHTBOX MODAL FOR FULLSCREEN MAPART INSPECTION -->
-  <div id="lightbox-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-6 hidden" onclick="closeLightbox(event)">
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-2.5 sm:p-6 hidden" onclick="closeLightbox(event)">
     <div class="bg-maptober-dark border-2 border-maptober-border rounded-xl max-w-5xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
       
       <!-- Top Bar -->
-      <div class="px-5 py-3.5 bg-maptober-card border-b border-maptober-border flex items-center justify-between gap-4">
+      <div class="px-4 py-3 bg-maptober-card border-b border-maptober-border flex items-center justify-between gap-3">
         <div class="flex items-center gap-2.5 min-w-0">
-          <span id="lb-day" class="px-2.5 py-1 rounded font-pixel text-xs bg-maptober-pumpkin/30 text-maptober-gold border border-maptober-amber/40 flex-shrink-0">DAY 1</span>
-          <h3 id="lb-title" class="font-bold text-white text-base sm:text-lg truncate">Map Title</h3>
+          <span id="lb-day" class="px-2.5 py-0.5 rounded font-pixel text-[10px] bg-maptober-pumpkin/30 text-maptober-gold border border-maptober-amber/40 flex-shrink-0">DAY 1</span>
+          <h3 id="lb-title" class="font-bold text-white text-sm sm:text-base truncate">Map Title</h3>
         </div>
-        <button onclick="closeLightbox()" class="w-8 h-8 rounded-lg bg-maptober-obsidian hover:bg-maptober-border text-maptober-textMuted hover:text-white flex items-center justify-center text-lg font-bold border border-maptober-border flex-shrink-0">
+        <button onclick="closeLightbox()" class="w-7 h-7 rounded-lg bg-maptober-obsidian hover:bg-maptober-border text-maptober-textMuted hover:text-white flex items-center justify-center text-sm font-bold border border-maptober-border flex-shrink-0">
           ✕
         </button>
       </div>
 
       <!-- Center Image -->
-      <div class="p-4 sm:p-6 bg-maptober-obsidian flex-grow overflow-auto flex items-center justify-center min-h-[300px] max-h-[68vh]">
-        <img id="lb-image" src="" alt="Mapart Fullscreen" class="max-w-full max-h-[62vh] object-contain rounded border border-maptober-border shadow-2xl">
+      <div class="p-3 sm:p-6 bg-maptober-obsidian flex-grow overflow-auto flex items-center justify-center min-h-[220px] max-h-[58vh]">
+        <img id="lb-image" src="" alt="Mapart Fullscreen" class="max-w-full max-h-[52vh] object-contain rounded border border-maptober-border shadow-2xl">
       </div>
 
       <!-- Bottom Meta Bar -->
-      <div class="px-5 py-3.5 bg-maptober-card border-t border-maptober-border flex flex-wrap items-center justify-between gap-4 text-xs">
+      <div class="px-4 py-3 bg-maptober-card border-t border-maptober-border flex flex-wrap items-center justify-between gap-3 text-xs">
         <div class="flex flex-wrap items-center gap-4 sm:gap-6">
           <div>
             <span class="text-maptober-textMuted block text-[10px] font-pixel uppercase">Artist / Team</span>
-            <span id="lb-artist" class="font-bold text-maptober-parchment text-sm">Artist</span>
+            <span id="lb-artist" class="font-bold text-maptober-parchment text-xs sm:text-sm">Artist</span>
           </div>
           <div>
             <span class="text-maptober-textMuted block text-[10px] font-pixel uppercase">Dimensions</span>
-            <span id="lb-size" class="font-mono text-white text-sm">2x2 (4 Maps)</span>
+            <span id="lb-size" class="font-mono text-white text-xs sm:text-sm">2x2</span>
           </div>
           <div>
             <span class="text-maptober-textMuted block text-[10px] font-pixel uppercase">Size Bonus</span>
-            <span id="lb-bonus" class="font-pixel text-amber-400 text-sm">+3 PTS</span>
+            <span id="lb-bonus" class="font-pixel text-amber-400 font-bold text-xs sm:text-sm">+3 PTS</span>
           </div>
-          <div id="lb-score-box">
-            <span class="text-maptober-textMuted block text-[10px] font-pixel uppercase">Jury Score</span>
-            <span id="lb-score" class="font-pixel text-maptober-gold text-sm">Pending</span>
+          <div>
+            <span class="text-maptober-textMuted block text-[10px] font-pixel uppercase">Total Score</span>
+            <span id="lb-score" class="font-pixel text-maptober-gold font-bold text-xs sm:text-sm">19.50 PTS</span>
           </div>
         </div>
 
-        <div class="flex items-center gap-2 ml-auto">
-          <button onclick="navigateLightbox(-1)" class="px-3 py-1.5 rounded bg-maptober-obsidian hover:bg-maptober-cardHover border border-maptober-border font-pixel text-xs text-maptober-textMain">◄ Prev</button>
-          <button onclick="navigateLightbox(1)" class="px-3 py-1.5 rounded bg-maptober-obsidian hover:bg-maptober-cardHover border border-maptober-border font-pixel text-xs text-maptober-textMain">Next ►</button>
-          <a id="lb-open-raw" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-maptober-pumpkin hover:bg-amber-600 font-pixel text-xs text-black font-bold transition">
-            Original ↗
+        <div class="flex items-center gap-1.5 ml-auto">
+          <button onclick="navigateLightbox(-1)" class="px-2.5 py-1.5 rounded bg-maptober-obsidian hover:bg-maptober-cardHover border border-maptober-border font-pixel text-[10px] text-maptober-textMain">◄ PREV</button>
+          <button onclick="navigateLightbox(1)" class="px-2.5 py-1.5 rounded bg-maptober-obsidian hover:bg-maptober-cardHover border border-maptober-border font-pixel text-[10px] text-maptober-textMain">NEXT ►</button>
+          <a id="lb-open-raw" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded bg-maptober-pumpkin hover:bg-amber-600 font-pixel text-[10px] text-black font-bold transition">
+            FULL RES ↗
           </a>
         </div>
       </div>
@@ -390,94 +365,63 @@
   </div>
 
   <!-- MODAL: SCORING & BONUS RULES -->
-  <div id="rules-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" onclick="toggleRulesModal()">
-    <div class="bg-maptober-dark border-2 border-maptober-gold/70 rounded-xl w-full max-w-3xl max-h-[88vh] flex flex-col shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-      <div class="px-5 py-4 border-b border-maptober-border flex justify-between items-center bg-maptober-card">
-        <div class="flex items-center gap-2.5">
-          <span class="text-xl">📜</span>
-          <div>
-            <h3 class="text-maptober-gold font-pixel text-sm sm:text-base">MAPTOBER 2026 • OFFICIAL SCORING SYSTEM</h3>
-            <p class="text-xs text-maptober-textMuted">How Jury Votes, Size Bonuses, and Homeruns are calculated</p>
-          </div>
+  <div id="rules-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 hidden" onclick="toggleRulesModal()">
+    <div class="bg-maptober-dark border-2 border-maptober-gold/70 rounded-xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+      <div class="px-4 py-3.5 bg-maptober-card border-b border-maptober-border flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="text-lg">📜</span>
+          <h2 class="font-pixel text-sm sm:text-base text-maptober-gold">MAPTOBER 2026 • SCORING RULES</h2>
         </div>
-        <button onclick="toggleRulesModal()" class="w-8 h-8 rounded-lg bg-maptober-obsidian hover:bg-maptober-border text-maptober-textMuted hover:text-white flex items-center justify-center text-lg font-bold border border-maptober-border">
+        <button onclick="toggleRulesModal()" class="w-7 h-7 rounded bg-maptober-obsidian hover:bg-maptober-border text-maptober-textMuted hover:text-white flex items-center justify-center font-bold text-sm border border-maptober-border">
           ✕
         </button>
       </div>
 
-      <div class="p-5 sm:p-6 overflow-y-auto space-y-6 text-xs sm:text-sm leading-relaxed text-maptober-textMain">
-        <div class="bg-maptober-obsidian/90 border border-maptober-border rounded-lg p-4">
-          <div class="text-xs font-pixel text-maptober-amber uppercase mb-2">1. Score Formula per Mapart</div>
-          <p class="text-maptober-textMuted mb-3">
-            Each mapart is rated from <strong>1 to 10 points</strong> by the Maptober Jury. The average jury rating is combined with a fixed Size Bonus:
-          </p>
-          <div class="bg-maptober-card border border-maptober-amber/40 rounded p-3 font-mono text-center text-maptober-gold font-bold text-xs sm:text-sm">
-            Total Map Score = Ø Jury Rating (1–10 pts) + Size Bonus (+1 to +10 pts)
+      <div class="p-4 sm:p-5 overflow-y-auto space-y-4 text-xs leading-relaxed text-maptober-textMain">
+        <div class="bg-maptober-obsidian/90 border border-maptober-border rounded-lg p-3.5">
+          <div class="font-pixel text-xs text-maptober-amber uppercase mb-1.5">1. Mapart Score Formula</div>
+          <p class="text-maptober-textMuted mb-2.5">Each mapart receives an average Rating (Ø 1 to 10 points) which is added to a fixed Size Bonus:</p>
+          <div class="bg-maptober-card border border-maptober-amber/40 rounded p-2.5 font-mono text-center text-maptober-gold font-bold text-xs">
+            Total Map Score = Ø Rating (1–10) + Size Bonus (+1 to +10)
           </div>
         </div>
 
         <div>
-          <div class="text-xs font-pixel text-maptober-amber uppercase mb-2.5">2. Size Bonus Brackets</div>
-          <div class="overflow-hidden rounded-lg border border-maptober-border">
-            <table class="w-full text-left border-collapse font-mono text-xs">
+          <div class="font-pixel text-xs text-maptober-amber uppercase mb-2">2. Size Bonus Brackets</div>
+          <div class="overflow-hidden rounded-lg border border-maptober-border font-mono text-xs">
+            <table class="w-full text-left border-collapse">
               <thead>
-                <tr class="bg-maptober-card text-maptober-gold border-b border-maptober-border">
-                  <th class="py-2.5 px-3">Tier</th>
-                  <th class="py-2.5 px-3">Area (Maps)</th>
-                  <th class="py-2.5 px-3">Examples</th>
-                  <th class="py-2.5 px-3 text-right">Bonus</th>
+                <tr class="bg-maptober-card text-maptober-gold border-b border-maptober-border font-pixel text-[10px]">
+                  <th class="py-2 px-3">Tier</th>
+                  <th class="py-2 px-3">Area (Maps)</th>
+                  <th class="py-2 px-3 text-right">Bonus</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-maptober-border/60 bg-maptober-obsidian/70">
-                <tr>
-                  <td class="py-2 px-3 text-maptober-parchment font-sans font-semibold">Mini / Standard</td>
-                  <td class="py-2 px-3">1 Map</td>
-                  <td class="py-2 px-3 text-maptober-textMuted">1×1 (incl. 3D)</td>
-                  <td class="py-2 px-3 text-right font-bold text-amber-400">+1 pt</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 text-maptober-parchment font-sans font-semibold">Small</td>
-                  <td class="py-2 px-3">2 – 4 Maps</td>
-                  <td class="py-2 px-3 text-maptober-textMuted">1×2, 2×1, 3×1, 2×2</td>
-                  <td class="py-2 px-3 text-right font-bold text-amber-400">+3 pts</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 text-maptober-parchment font-sans font-semibold">Medium</td>
-                  <td class="py-2 px-3">5 – 9 Maps</td>
-                  <td class="py-2 px-3 text-maptober-textMuted">2×3, 3×2, 5×1, 4×2, 3×3</td>
-                  <td class="py-2 px-3 text-right font-bold text-amber-400">+5 pts</td>
-                </tr>
-                <tr>
-                  <td class="py-2 px-3 text-maptober-parchment font-sans font-semibold">Large</td>
-                  <td class="py-2 px-3">10 – 20 Maps</td>
-                  <td class="py-2 px-3 text-maptober-textMuted">3×4, 5×3, 6×3, 4×5</td>
-                  <td class="py-2 px-3 text-right font-bold text-amber-400">+8 pts</td>
-                </tr>
-                <tr class="bg-amber-950/25">
-                  <td class="py-2 px-3 text-maptober-gold font-sans font-bold">Mega Mapart</td>
-                  <td class="py-2 px-3">21+ Maps</td>
-                  <td class="py-2 px-3 text-maptober-textMuted">7×3, 5×5, 8×8, 9×6, 16×10</td>
-                  <td class="py-2 px-3 text-right font-bold text-maptober-gold">+10 pts</td>
-                </tr>
+                <tr><td class="py-1.5 px-3">Mini / Standard</td><td class="py-1.5 px-3">1 Map (1x1)</td><td class="py-1.5 px-3 text-right text-amber-400 font-bold">+1 pt</td></tr>
+                <tr><td class="py-1.5 px-3">Small</td><td class="py-1.5 px-3">2 – 4 Maps (2x2, etc.)</td><td class="py-1.5 px-3 text-right text-amber-400 font-bold">+3 pts</td></tr>
+                <tr><td class="py-1.5 px-3">Medium</td><td class="py-1.5 px-3">5 – 9 Maps (2x3, 3x3, etc.)</td><td class="py-1.5 px-3 text-right text-amber-400 font-bold">+5 pts</td></tr>
+                <tr><td class="py-1.5 px-3">Large</td><td class="py-1.5 px-3">10 – 20 Maps (4x3, 5x3, etc.)</td><td class="py-1.5 px-3 text-right text-amber-400 font-bold">+8 pts</td></tr>
+                <tr class="bg-amber-950/20"><td class="py-1.5 px-3 text-maptober-gold font-bold">Mega Mapart</td><td class="py-1.5 px-3">21+ Maps (7x3, 8x8, 16x10)</td><td class="py-1.5 px-3 text-right text-maptober-gold font-bold">+10 pts</td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <div class="bg-gradient-to-r from-amber-950/60 to-maptober-card border border-maptober-gold/50 rounded-lg p-4">
-          <div class="flex items-center justify-between mb-1.5">
-            <span class="text-xs font-pixel text-maptober-gold uppercase">3. Homerun Bonus (All 31 Days)</span>
-            <span class="px-2 py-0.5 rounded bg-maptober-gold text-black font-pixel text-[11px] font-bold">+35 POINTS</span>
+        <div class="bg-gradient-to-r from-amber-950/60 to-maptober-card border border-maptober-gold/50 rounded-lg p-3.5">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-pixel text-xs text-maptober-gold">3. HOMERUN BONUS (31/31 DAYS)</span>
+            <span class="px-2 py-0.5 rounded bg-maptober-gold text-black font-pixel text-[10px] font-bold">+35 PTS</span>
           </div>
-          <p class="text-maptober-textMuted text-xs leading-relaxed">
-            Every artist or team that submitted a valid mapart for all 31 days of October earns a <strong>+35 point Homerun Bonus</strong>. 
-            Congratulations to <strong>CherryTeam</strong>, <strong>SteinerndeMedusa</strong>, <strong>Endenjoyers</strong>, and <strong>KINGS OF CLOUD</strong> for completing all 31 days!
+          <p class="text-maptober-textMuted text-xs">
+            Awarded to artists or teams who submitted a valid build on all 31 days of October: 
+            <strong>CherryTeam</strong>, <strong>SteinerndeMedusa</strong>, <strong>KINGS OF CLOUD</strong>, and <strong>Endenjoyers</strong>!
           </p>
         </div>
       </div>
 
-      <div class="px-5 py-3 bg-maptober-obsidian border-t border-maptober-border flex justify-end">
-        <button onclick="toggleRulesModal()" class="px-5 py-2 bg-gradient-to-r from-maptober-pumpkin to-maptober-amber text-black font-pixel text-xs font-bold rounded-lg">
+      <div class="px-4 py-2.5 bg-maptober-obsidian border-t border-maptober-border flex justify-end">
+        <button onclick="toggleRulesModal()" class="px-4 py-1.5 bg-gradient-to-r from-maptober-pumpkin to-maptober-amber text-black font-pixel text-xs font-bold rounded-lg">
           CLOSE
         </button>
       </div>
@@ -486,18 +430,22 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // =========================================================================
-    // CONFIGURATION: SET RESULTS_PUBLISHED = true ONCE JURY VOTING IS FINISHED!
-    // =========================================================================
-    const RESULTS_PUBLISHED = false;
-
-    // Paste final averaged jury scores here later (mapId: averageScore)
-    // When RESULTS_PUBLISHED is true, the site automatically displays all final scores and crowns the winners!
-    const FINAL_JURY_SCORES = {
-      // Example: 1: 8.75, 2: 7.50, ...
+    const JURY_VOTES_RAW = {
+      Kleingebaeck: {"1":9,"2":4,"3":6,"4":7,"5":5,"6":4,"7":2,"8":2,"9":4,"10":6,"11":6,"12":6,"13":5,"14":9,"15":4,"16":3,"17":5,"18":4,"19":6,"20":3,"21":4,"22":3,"23":5,"24":4,"25":5,"26":4,"27":5,"28":2,"29":2,"30":4,"31":4,"32":5,"33":3,"34":3,"35":7,"36":5,"37":5,"38":4,"39":6,"40":3,"41":2,"42":4,"43":8,"44":3,"45":1,"46":4,"47":7,"48":7,"49":3,"50":3,"51":4,"52":3,"53":2,"54":3,"55":4,"56":5,"57":3,"58":3,"59":5,"60":3,"61":3,"62":8,"63":3,"64":3,"65":3,"66":4,"67":7,"68":3,"69":3,"70":3,"71":2,"72":3,"73":8,"74":2,"75":6,"76":2,"77":3,"78":4,"79":5,"80":4,"81":4,"82":4,"83":4,"84":4,"85":4,"86":3,"87":3,"88":6,"89":4,"90":3,"91":2,"92":2,"93":3,"94":3,"95":2,"96":3,"97":2,"98":2,"99":4,"100":3,"101":3,"102":5,"103":3,"104":4,"105":2,"106":3,"107":3,"108":3,"109":5,"110":4,"111":2,"112":2,"113":6,"114":6,"115":5,"116":4,"117":6,"118":7,"119":4,"120":10,"121":6,"122":7,"123":4,"124":9,"125":10},
+      Ganhas: {"1":8,"2":3,"3":5,"4":9,"5":4,"6":5,"7":3,"8":5,"9":2,"10":4,"11":2,"12":5,"13":3,"14":7,"15":5,"16":5,"17":3,"18":3,"19":7,"20":6,"21":2,"22":1,"23":2,"24":3,"25":4,"26":10,"27":3,"28":4,"29":1,"30":3,"31":6,"32":3,"33":5,"34":4,"35":7,"36":3,"37":3,"38":3,"39":8,"40":3,"41":2,"42":3,"43":9,"44":4,"45":2,"46":3,"47":5,"48":4,"49":2,"50":2,"51":4,"52":1,"53":3,"54":2,"55":2,"56":2,"57":6,"58":3,"59":4,"60":5,"61":4,"62":8,"63":3,"64":3,"65":3,"66":3,"67":6,"68":2,"69":3,"70":4,"71":4,"72":3,"73":8,"74":3,"75":7,"76":2,"77":3,"78":3,"79":10,"80":3,"81":2,"82":4,"83":5,"84":3,"85":3,"86":3,"87":3,"88":2,"89":2,"90":2,"91":3,"92":4,"93":3,"94":4,"95":4,"96":3,"97":5,"98":6,"99":7,"100":3,"101":3,"102":7,"103":6,"104":2,"105":2,"106":7,"107":2,"108":3,"109":7,"110":4,"111":7,"112":3,"113":8,"114":5,"115":4,"116":3,"117":3,"118":3,"119":3,"120":8,"121":9,"122":6,"123":3,"124":10,"125":4},
+      BrilleMC: {"1":9,"2":3,"3":4,"4":7,"5":3,"6":4,"7":3,"8":3,"9":4,"10":6,"11":5,"12":4,"13":3,"14":8,"15":3,"16":3,"17":4,"18":3,"19":7,"20":2,"21":7,"22":4,"23":5,"24":3,"25":5,"26":5,"27":5,"28":4,"29":3,"30":4,"31":4,"32":5,"33":1,"34":4,"35":6,"36":6,"37":3,"38":3,"39":7,"40":1,"41":2,"42":3,"43":7,"44":3,"45":1,"46":4,"47":5,"48":6,"49":2,"50":2,"51":3,"52":3,"53":1,"54":4,"55":4,"56":5,"57":5,"58":3,"59":4,"60":2,"61":1,"62":8,"63":4,"64":2,"65":1,"66":5,"67":7,"68":5,"69":5,"70":4,"71":3,"72":4,"73":6,"74":3,"75":6,"76":1,"77":2,"78":4,"79":6,"80":3,"81":4,"82":1,"83":2,"84":3,"85":3,"86":3,"87":3,"88":6,"89":5,"90":5,"91":1,"92":1,"93":4,"94":3,"95":3,"96":3,"97":4,"98":2,"99":5,"100":4,"101":4,"102":4,"103":1,"104":5,"105":1,"106":3,"107":1,"108":3,"109":5,"110":2,"111":1,"112":4,"113":6,"114":6,"115":4,"116":3,"117":4,"118":5,"119":4,"120":10,"121":7,"122":5,"123":6,"124":7,"125":10},
+      Pasik: {"1":9,"2":5,"3":7,"4":8,"5":3,"6":5,"7":4,"8":4,"9":5,"10":7,"11":6,"12":7,"13":4,"14":8,"15":5,"16":7,"17":8,"18":5,"19":8,"20":8,"21":4,"22":6,"23":8,"24":6,"25":5,"26":4,"27":8,"28":4,"29":3,"30":5,"31":6,"32":8,"33":4,"34":5,"35":8,"36":9,"37":8,"38":7,"39":10,"40":5,"41":3,"42":4,"43":8,"44":5,"45":3,"46":7,"47":8,"48":8,"49":5,"50":4,"51":4,"52":3,"53":3,"54":4,"55":6,"56":6,"57":5,"58":4,"59":5,"60":4,"61":7,"62":8,"63":4,"64":6,"65":3,"66":4,"67":8,"68":5,"69":4,"70":4,"71":5,"72":4,"73":7,"74":4,"75":9,"76":4,"77":4,"78":4,"79":8,"80":5,"81":5,"82":5,"83":5,"84":5,"85":4,"86":4,"87":4,"88":7,"89":7,"90":4,"91":3,"92":2,"93":5,"94":4,"95":4,"96":6,"97":4,"98":5,"99":6,"100":7,"101":4,"102":6,"103":4,"104":5,"105":3,"106":4,"107":4,"108":4,"109":5,"110":5,"111":4,"112":4,"113":7,"114":8,"115":5,"116":4,"117":5,"118":8,"119":4,"120":10,"121":8,"122":9,"123":7,"124":9,"125":10}
     };
 
-    // --- FULL DATASET OF ALL 125 VALID SUBMISSIONS ---
+    const FINAL_JURY_SCORES = {};
+    for (let id = 1; id <= 125; id++) {
+      const k = JURY_VOTES_RAW.Kleingebaeck[id] || 0;
+      const g = JURY_VOTES_RAW.Ganhas[id] || 0;
+      const b = JURY_VOTES_RAW.BrilleMC[id] || 0;
+      const p = JURY_VOTES_RAW.Pasik[id] || 0;
+      FINAL_JURY_SCORES[id] = (k + g + b + p) / 4;
+    }
+
     const mapsData = [
       { id: 1, day: 1, name: "Mountain", artist: "CherryTeam", size: "10x6", blocks: 60, bonus: 10, file: "image-351def5b5f84618b.png", image: "https://cdn.discordapp.com/attachments/1549869494556561408/1555096093908275292/image.png?backend=b2&ex=6ae82619&is=6ae6d499&hm=46fc16d1cbf4d4586c110238b7f4d4d465151dc6ed150cce278754b0b398dd88&" },
       { id: 2, day: 1, name: "who?", artist: "SteinerndeMedusa", size: "2x2", blocks: 4, bonus: 3, file: "image-90e76ac8d574f7a2.png", image: "https://cdn.discordapp.com/attachments/1549869494556561408/1555246213710745640/image.png?backend=b2&ex=6ae80928&is=6ae6b7a8&hm=8e762eaefe2cc138aa563f6326366fd3b79cccf584e0f7e60beb5d3b0b307d57&" },
@@ -629,7 +577,6 @@
     let filteredMaps = [...mapsData];
     let currentLightboxIndex = 0;
 
-    // Populate Day Filter Dropdown (Day 1 to 31)
     const daySelect = document.getElementById("filter-day");
     for (let d = 1; d <= 31; d++) {
       const opt = document.createElement("option");
@@ -638,21 +585,11 @@
       daySelect.appendChild(opt);
     }
 
-    // Calculate total blocks
     const totalBlocksBuilt = mapsData.reduce((acc, m) => acc + m.blocks, 0);
     document.getElementById("stat-total-blocks").textContent = totalBlocksBuilt.toLocaleString();
 
-    if (RESULTS_PUBLISHED) {
-      document.getElementById("stat-voting-status").textContent = "PUBLISHED";
-      document.getElementById("stat-voting-status").className = "font-pixel text-sm sm:text-base text-emerald-400 font-bold";
-      document.getElementById("results-pending-banner").classList.add("hidden");
-      document.getElementById("standings-mode-badge").textContent = "OFFICIAL FINAL RESULTS";
-      document.getElementById("standings-mode-badge").className = "px-3 py-1 rounded bg-emerald-500/20 border border-emerald-400/50 font-pixel text-[10px] text-emerald-300";
-    }
-
     function getMapScore(map) {
-      const juryAvg = FINAL_JURY_SCORES[map.id] || 0;
-      return RESULTS_PUBLISHED ? (juryAvg + map.bonus) : map.bonus;
+      return (FINAL_JURY_SCORES[map.id] || 0) + map.bonus;
     }
 
     function switchTab(tab) {
@@ -664,13 +601,14 @@
       if (tab === "gallery") {
         galleryView.classList.remove("hidden");
         resultsView.classList.add("hidden");
-        btnGallery.className = "px-3.5 py-2 rounded-lg font-pixel text-xs transition flex items-center gap-1.5 bg-gradient-to-r from-maptober-pumpkin to-maptober-amber text-black font-bold shadow";
-        btnResults.className = "px-3.5 py-2 rounded-lg font-pixel text-xs transition flex items-center gap-1.5 bg-maptober-card hover:bg-maptober-cardHover text-maptober-textMain border border-maptober-border";
+        btnGallery.className = "flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg font-pixel text-[11px] sm:text-xs transition flex items-center justify-center gap-1.5 bg-gradient-to-r from-maptober-pumpkin to-maptober-amber text-black font-bold shadow-lg";
+        btnResults.className = "flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg font-pixel text-[11px] sm:text-xs transition flex items-center justify-center gap-1.5 bg-maptober-card hover:bg-maptober-cardHover text-maptober-textMain border border-maptober-border";
+        applyFilters();
       } else {
         galleryView.classList.add("hidden");
         resultsView.classList.remove("hidden");
-        btnResults.className = "px-3.5 py-2 rounded-lg font-pixel text-xs transition flex items-center gap-1.5 bg-gradient-to-r from-maptober-pumpkin to-maptober-amber text-black font-bold shadow";
-        btnGallery.className = "px-3.5 py-2 rounded-lg font-pixel text-xs transition flex items-center gap-1.5 bg-maptober-card hover:bg-maptober-cardHover text-maptober-textMain border border-maptober-border";
+        btnResults.className = "flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg font-pixel text-[11px] sm:text-xs transition flex items-center justify-center gap-1.5 bg-gradient-to-r from-maptober-pumpkin to-maptober-amber text-black font-bold shadow-lg";
+        btnGallery.className = "flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg font-pixel text-[11px] sm:text-xs transition flex items-center justify-center gap-1.5 bg-maptober-card hover:bg-maptober-cardHover text-maptober-textMain border border-maptober-border";
         renderResultsTab();
       }
     }
@@ -709,10 +647,11 @@
       });
 
       filteredMaps.sort((a, b) => {
+        if (sort === "score_desc") return getMapScore(b) - getMapScore(a) || (FINAL_JURY_SCORES[b.id] - FINAL_JURY_SCORES[a.id]);
+        if (sort === "rating_desc") return (FINAL_JURY_SCORES[b.id] - FINAL_JURY_SCORES[a.id]) || b.blocks - a.blocks;
         if (sort === "day_asc") return a.day - b.day || a.id - b.id;
         if (sort === "day_desc") return b.day - a.day || b.id - a.id;
         if (sort === "size_desc") return b.blocks - a.blocks || a.id - b.id;
-        if (sort === "score_desc") return getMapScore(b) - getMapScore(a) || b.blocks - a.blocks;
         if (sort === "name_asc") return a.name.localeCompare(b.name);
         return 0;
       });
@@ -724,7 +663,7 @@
       document.getElementById("filter-search").value = "";
       document.getElementById("filter-artist").value = "ALL";
       document.getElementById("filter-day").value = "ALL";
-      document.getElementById("filter-sort").value = "day_asc";
+      document.getElementById("filter-sort").value = "score_desc";
       applyFilters();
     }
 
@@ -742,29 +681,30 @@
 
       filteredMaps.forEach((map, idx) => {
         const card = document.createElement("div");
-        card.className = "bg-maptober-card/95 border border-maptober-border hover:border-maptober-amber rounded-xl overflow-hidden shadow-lg flex flex-col justify-between transition group cursor-pointer hover:-translate-y-1";
+        card.className = "bg-maptober-card/95 border-2 border-maptober-border hover:border-maptober-amber rounded-xl overflow-hidden shadow-lg flex flex-col justify-between transition group cursor-pointer hover:-translate-y-1";
         card.onclick = () => openLightbox(idx);
 
-        const juryScore = FINAL_JURY_SCORES[map.id];
-        const scoreBadge = RESULTS_PUBLISHED && juryScore !== undefined
-          ? `<span class="px-2 py-0.5 rounded bg-amber-500/20 border border-maptober-gold text-maptober-gold font-pixel text-[10px] font-bold">★ ${(juryScore + map.bonus).toFixed(1)} PTS</span>`
-          : `<span class="px-2 py-0.5 rounded bg-maptober-obsidian border border-maptober-border text-amber-400 font-pixel text-[10px]">+${map.bonus} Bonus</span>`;
+        const juryScore = FINAL_JURY_SCORES[map.id] || 0;
+        const totalScore = juryScore + map.bonus;
 
         card.innerHTML = `
           <div>
-            <div class="px-3.5 py-2.5 bg-maptober-dark border-b border-maptober-border flex items-center justify-between text-xs">
-              <span class="font-pixel text-[10px] text-maptober-gold">DAY ${map.day}</span>
-              <span class="font-mono text-[11px] text-maptober-textMuted">${map.size} (${map.blocks})</span>
+            <div class="px-2.5 sm:px-3 py-1.5 sm:py-2 bg-maptober-dark border-b border-maptober-border flex items-center justify-between text-[10px]">
+              <span class="font-pixel text-maptober-gold">DAY ${map.day}</span>
+              <span class="font-mono text-maptober-textMuted">${map.size}</span>
             </div>
-            <div class="aspect-square w-full bg-maptober-obsidian p-2 flex items-center justify-center overflow-hidden relative">
+            <div class="aspect-square w-full bg-maptober-obsidian p-1.5 sm:p-2 flex items-center justify-center overflow-hidden relative">
               <img class="max-w-full max-h-full object-contain rounded transition-transform duration-300 group-hover:scale-105" alt="${map.name}">
+              <div class="absolute top-1.5 right-1.5 bg-black/85 border border-maptober-border px-1.5 py-0.5 rounded font-pixel text-[10px] text-amber-300">
+                ${totalScore.toFixed(2)} PTS
+              </div>
             </div>
           </div>
-          <div class="p-3.5 border-t border-maptober-border/60 bg-maptober-card">
-            <h3 class="font-bold text-white text-sm truncate" title="${map.name}">${map.name}</h3>
-            <div class="flex items-center justify-between mt-1.5 gap-2">
-              <span class="text-xs text-maptober-parchment font-medium truncate">${map.artist}</span>
-              ${scoreBadge}
+          <div class="p-2.5 sm:p-3 border-t border-maptober-border/60 bg-maptober-card">
+            <h3 class="font-bold text-white text-xs sm:text-sm truncate" title="${map.name}">${map.name}</h3>
+            <div class="flex items-center justify-between mt-1 text-[11px] text-maptober-parchment font-medium truncate">
+              <span class="truncate">${map.artist}</span>
+              <span class="font-pixel text-[10px] text-maptober-gold flex-shrink-0 ml-1.5">+${map.bonus}</span>
             </div>
           </div>
         `;
@@ -791,12 +731,8 @@
       document.getElementById("lb-size").textContent = `${map.size} (${map.blocks} ${map.blocks === 1 ? 'Map' : 'Maps'})`;
       document.getElementById("lb-bonus").textContent = `+${map.bonus} PTS`;
 
-      const juryScore = FINAL_JURY_SCORES[map.id];
-      if (RESULTS_PUBLISHED && juryScore !== undefined) {
-        document.getElementById("lb-score").textContent = `${juryScore.toFixed(2)} / 10 (Total: ${(juryScore + map.bonus).toFixed(2)})`;
-      } else {
-        document.getElementById("lb-score").textContent = "Voting in Progress";
-      }
+      const juryScore = FINAL_JURY_SCORES[map.id] || 0;
+      document.getElementById("lb-score").textContent = `${(juryScore + map.bonus).toFixed(2)} PTS (Ø ${juryScore.toFixed(2)} + ${map.bonus} Bonus)`;
 
       const imgEl = document.getElementById("lb-image");
       handleImageFallback(imgEl, map.file, map.image, map.name);
@@ -819,13 +755,13 @@
 
     function renderResultsTab() {
       const participants = [
-        { name: "CherryTeam", homerun: 35, isMain: true },
-        { name: "KINGS OF CLOUD", homerun: 35, isMain: true },
-        { name: "SteinerndeMedusa", homerun: 35, isMain: true },
-        { name: "Endenjoyers", homerun: 35, isMain: true },
-        { name: "BrilleMC", homerun: 0, isMain: false },
-        { name: "diskutabel", homerun: 0, isMain: false },
-        { name: "aphied", homerun: 0, isMain: false }
+        { name: "CherryTeam", homerun: 35 },
+        { name: "SteinerndeMedusa", homerun: 35 },
+        { name: "KINGS OF CLOUD", homerun: 35 },
+        { name: "Endenjoyers", homerun: 35 },
+        { name: "BrilleMC", homerun: 0 },
+        { name: "aphied", homerun: 0 },
+        { name: "diskutabel", homerun: 0 }
       ];
 
       const standings = participants.map(p => {
@@ -834,7 +770,8 @@
         const totalArea = teamMaps.reduce((acc, m) => acc + m.blocks, 0);
         const sizeBonusSum = teamMaps.reduce((acc, m) => acc + m.bonus, 0);
         const jurySum = teamMaps.reduce((acc, m) => acc + (FINAL_JURY_SCORES[m.id] || 0), 0);
-        const totalScore = sizeBonusSum + p.homerun + (RESULTS_PUBLISHED ? jurySum : 0);
+        const avgJury = mapCount > 0 ? (jurySum / mapCount) : 0;
+        const totalScore = sizeBonusSum + p.homerun + jurySum;
 
         return {
           ...p,
@@ -842,59 +779,100 @@
           totalArea,
           sizeBonusSum,
           jurySum,
+          avgJury,
           totalScore
         };
       }).sort((a, b) => b.totalScore - a.totalScore || b.totalArea - a.totalArea);
 
+      // Render Podium Cards
+      const podiumContainer = document.getElementById("podium-cards");
+      const podiumStyles = [
+        { badge: "🥇 1ST PLACE CHAMPION", border: "border-maptober-gold shadow-[0_0_25px_rgba(255,200,59,0.2)]", bg: "from-amber-950/60 via-maptober-card to-maptober-dark" },
+        { badge: "🥈 2ND PLACE RUNNER-UP", border: "border-amber-500/60", bg: "from-maptober-card to-maptober-dark" },
+        { badge: "🥉 3RD PLACE PODIUM", border: "border-amber-700/60", bg: "from-maptober-card to-maptober-dark" }
+      ];
+
+      podiumContainer.innerHTML = standings.slice(0, 3).map((s, idx) => {
+        const style = podiumStyles[idx];
+        return `
+          <div class="bg-gradient-to-br ${style.bg} border-2 ${style.border} rounded-xl p-4 sm:p-5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="font-pixel text-[10px] px-2 py-0.5 rounded bg-black/60 text-maptober-gold border border-maptober-amber/40">${style.badge}</span>
+                <span class="font-pixel text-[10px] text-emerald-400">31/31 HOMERUN</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-extrabold text-white tracking-tight">${s.name}</h3>
+            </div>
+            <div class="mt-4 pt-3 border-t border-maptober-border/60 flex items-baseline justify-between">
+              <div>
+                <span class="text-[10px] font-pixel text-maptober-textMuted block">FINAL SCORE</span>
+                <span class="font-pixel text-xl sm:text-2xl text-maptober-gold font-bold">${s.totalScore.toFixed(2)} PTS</span>
+              </div>
+              <div class="text-right font-mono text-xs text-maptober-textMuted">
+                <div>Ø ${s.avgJury.toFixed(2)} Rating</div>
+                <div>${s.totalArea} maps built</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      // Leaderboard Table
       const tbody = document.getElementById("leaderboard-table-body");
       tbody.innerHTML = standings.map((s, idx) => {
         const rankMedal = idx === 0 ? "🥇 1st" : idx === 1 ? "🥈 2nd" : idx === 2 ? "🥉 3rd" : `#${idx + 1}`;
         return `
-          <tr class="hover:bg-maptober-cardHover/60 transition ${idx < 3 ? 'bg-amber-950/15' : ''}">
-            <td class="py-3.5 px-4 font-pixel text-xs ${idx === 0 ? 'text-maptober-gold font-bold' : 'text-maptober-textMuted'}">${rankMedal}</td>
-            <td class="py-3.5 px-4 font-sans font-bold text-white text-sm">${s.name}</td>
-            <td class="py-3.5 px-4 text-center font-bold text-maptober-parchment">${s.mapCount}</td>
-            <td class="py-3.5 px-4 text-center text-maptober-textMuted">${s.totalArea} maps</td>
-            <td class="py-3.5 px-4 text-center">
+          <tr class="hover:bg-maptober-cardHover/60 transition ${idx === 0 ? 'bg-amber-950/25' : idx < 3 ? 'bg-amber-950/10' : ''}">
+            <td class="py-3.5 px-3.5 font-pixel text-xs ${idx === 0 ? 'text-maptober-gold' : 'text-maptober-textMuted'}">${rankMedal}</td>
+            <td class="py-3.5 px-3.5 font-sans font-bold text-white text-sm">${s.name}</td>
+            <td class="py-3.5 px-3.5 text-center font-bold text-maptober-parchment">${s.mapCount}</td>
+            <td class="py-3.5 px-3.5 text-center text-maptober-textMuted">${s.totalArea} maps</td>
+            <td class="py-3.5 px-3.5 text-center font-bold text-amber-300">Ø ${s.avgJury.toFixed(2)}</td>
+            <td class="py-3.5 px-3.5 text-center">
               ${s.homerun > 0 
-                ? '<span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-300 font-pixel text-[10px]">+35 PTS (31/31)</span>' 
-                : '<span class="text-maptober-textMuted/50">—</span>'}
+                ? '<span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-300 font-pixel text-[10px]">+35 PTS</span>' 
+                : '<span class="text-maptober-textMuted/40">—</span>'}
             </td>
-            <td class="py-3.5 px-4 text-right font-bold text-amber-400">+${s.sizeBonusSum} pts</td>
-            <td class="py-3.5 px-4 text-right font-mono ${RESULTS_PUBLISHED ? 'text-white font-bold' : 'text-maptober-textMuted italic'}">
-              ${RESULTS_PUBLISHED ? `+${s.jurySum.toFixed(1)} pts` : 'Pending'}
-            </td>
-            <td class="py-3.5 px-4 text-right font-pixel text-sm text-maptober-gold font-bold">
-              ${RESULTS_PUBLISHED ? s.totalScore.toFixed(1) : s.totalScore} PTS
+            <td class="py-3.5 px-3.5 text-right font-bold text-amber-400">+${s.sizeBonusSum} pts</td>
+            <td class="py-3.5 px-3.5 text-right font-bold text-white">+${s.jurySum.toFixed(2)} pts</td>
+            <td class="py-3.5 px-3.5 text-right font-pixel text-xs sm:text-sm text-maptober-gold font-bold">
+              ${s.totalScore.toFixed(2)} PTS
             </td>
           </tr>
         `;
       }).join("");
 
-      // Render Top 6 Showcase Maps
+      // Top 12 Maparts
       const topMapsContainer = document.getElementById("top-maps-showcase");
       const sortedTopMaps = [...mapsData].sort((a, b) => {
-        if (RESULTS_PUBLISHED) return getMapScore(b) - getMapScore(a);
-        return b.blocks - a.blocks;
-      }).slice(0, 6);
+        return getMapScore(b) - getMapScore(a) || (FINAL_JURY_SCORES[b.id] - FINAL_JURY_SCORES[a.id]);
+      }).slice(0, 12);
 
       topMapsContainer.innerHTML = "";
-      sortedTopMaps.forEach(m => {
+      sortedTopMaps.forEach((m, idx) => {
+        const juryAvg = FINAL_JURY_SCORES[m.id] || 0;
+        const total = juryAvg + m.bonus;
         const div = document.createElement("div");
-        div.className = "bg-maptober-obsidian/90 border border-maptober-border rounded-lg p-3 flex items-center gap-3.5 cursor-pointer hover:border-maptober-amber transition";
+        div.className = "bg-maptober-obsidian/90 border border-maptober-border rounded-lg p-2.5 sm:p-3 flex items-center gap-3 cursor-pointer hover:border-maptober-gold transition group";
         div.onclick = () => {
           filteredMaps = [...mapsData];
           openLightbox(mapsData.findIndex(x => x.id === m.id));
         };
         div.innerHTML = `
-          <img class="w-16 h-16 object-contain rounded bg-black border border-maptober-border flex-shrink-0" alt="${m.name}">
+          <div class="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0">
+            <img class="w-full h-full object-contain rounded bg-black border border-maptober-border" alt="${m.name}">
+            <span class="absolute -top-1.5 -left-1.5 px-1.5 py-0.5 rounded bg-maptober-pumpkin text-black font-pixel text-[9px] font-bold">#${idx + 1}</span>
+          </div>
           <div class="min-w-0 flex-grow">
             <div class="flex items-center justify-between text-[10px] font-pixel text-maptober-amber">
-              <span>DAY ${m.day}</span>
-              <span>${m.size} (${m.blocks} maps)</span>
+              <span>DAY ${m.day} • ${m.size}</span>
+              <span class="text-maptober-gold">${total.toFixed(2)} PTS</span>
             </div>
-            <div class="font-bold text-white text-sm truncate mt-0.5">${m.name}</div>
-            <div class="text-xs text-maptober-parchment truncate">${m.artist}</div>
+            <div class="font-bold text-white text-xs sm:text-sm truncate mt-0.5 group-hover:text-maptober-gold transition">${m.name}</div>
+            <div class="flex items-center justify-between text-[11px] text-maptober-parchment mt-0.5">
+              <span class="truncate font-medium">${m.artist}</span>
+              <span class="font-mono text-maptober-textMuted text-[10px] flex-shrink-0 ml-1">Ø ${juryAvg.toFixed(2)} + ${m.bonus}</span>
+            </div>
           </div>
         `;
         handleImageFallback(div.querySelector("img"), m.file, m.image, m.name);
@@ -913,6 +891,7 @@
       }
     });
 
+    renderResultsTab();
     applyFilters();
   </script>
 </body>
